@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from 'react-icons/ai'
 import { FaLinkedinIn, FaGithub } from 'react-icons/fa'
 import { BsFillPersonLinesFill } from 'react-icons/bs'
-import NavLogo from '../../public/assets/transparent_horizontal_layoutred.jpg'
+import NavLogo from '../../public/assets/transparent_horizontal_layoutred.png'
 import Image from 'next/image'
 import Link from 'next/link'
 
