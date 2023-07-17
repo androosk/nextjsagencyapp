@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from 'react-icons/ai'
 import { FaLinkedinIn, FaGithub } from 'react-icons/fa'
 import { BsFillPersonLinesFill } from 'react-icons/bs'
+import NavLogo from '../../public/assets/transparent_horizontal_layoutred.jpg'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -20,7 +21,7 @@ const NavBar = () => {
   return (
     <div className={navBar ? active : initial}>
       <div className="flex-1 flex justify-between items-center">
-        <Image className="scale-50 md:scale-100" src="/../public/assets/transparent_horizontal_layoutred.png" alt="third andrew creative logo" width={300} height={20}/>
+        <Image className="scale-50 md:scale-100" src={NavLogo} alt="third andrew creative logo" width={300} height={20}/>
       </div>
 
       <div className="hidden lg:flex lg:items-center lg:w-auto w-full" id="menu">
@@ -54,7 +55,7 @@ const NavBar = () => {
         >
           <div>
             <div className='flex w-full center items-center justify-between'>
-              <Image src="/../public/assets/transparent_horizontal_layoutred.png" alt="third andrew creative logo" width={200} height={20}/>
+              <Image src={NavLogo} alt="third andrew creative logo" width={200} height={20}/>
               <div onClick={handleNav} className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer'>
                 <AiOutlineClose className='text-black' />
               </div>
