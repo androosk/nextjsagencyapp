@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from 'react-icons/ai'
 import { FaLinkedinIn, FaGithub } from 'react-icons/fa'
 import { BsFillPersonLinesFill } from 'react-icons/bs'
@@ -10,18 +10,30 @@ import Link from 'next/link'
 const NavBar = () => {
 
   const [navBar, setNavbar] = useState(false)
+  const [navBG, setNavBG] = useState(false)
 
   const handleNav = () => {
     setNavbar(!navBar)
   }
 
-  const initial = 'transition lg:px-16 px-6 flex flex-wrap items-center lg:py-0 py-2 sticky w-full z-10 top-0'
-  const active = 'transition duration-500 lg:px-16 px-6 flex flex-wrap items-center lg:py-0 py-2 sticky w-full z-10 top-0 bg-primary bg-opacity-80'
+  useEffect(() => {
+  const changeBackground = () => {
+    if(window.scrollY >= 80) {
+      setNavBG(true)
+    } else {
+      setNavBG(false)
+    }
+  }
+  window.addEventListener('scroll', changeBackground)
+  }, []);
+
+  const initial = 'transition lg:px-16 px-6 flex flex-wrap items-center lg:py-0 py-2 sticky w-full z-10 top-0 shadow-lg shadow-gray-400'
+  const active = 'transition duration-500 lg:px-16 px-6 flex flex-wrap items-center lg:py-0 py-2 sticky w-full z-10 top-0 bg-primary bg-opacity-80 shadow-lg shadow-gray-400'
 
   return (
-    <div className={navBar ? active : initial}>
+    <div className={navBG ? active : initial}>
       <div className="flex-1 flex justify-between items-center">
-        <Image className="scale-50 md:scale-100" src={NavLogo} alt="third andrew creative logo" width={300} height={20}/>
+        <Image className="scale-70 md:scale-100" src={NavLogo} alt="third andrew creative logo" width={300} height={20}/>
       </div>
 
       <div className="hidden lg:flex lg:items-center lg:w-auto w-full" id="menu">
@@ -49,7 +61,7 @@ const NavBar = () => {
       <div className={navBar ? 'fixed left-0 top-0 w-full h-screen bg-black/70' : ''}>
         <div className={
           navBar
-          ? 'md:hidden fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#ecf0f3] p-6 md:p-10 ease-in duration-300'
+          ? 'md:hidden fixed left-0 top-0 w-[100%] sm:w-[60%] md:w-[45%] h-screen bg-[#ecf0f3] p-6 md:p-10 ease-in duration-300'
           : 'fixed left-[-100%] top-0 p-10 ease-in duration-300'
         }
         >
