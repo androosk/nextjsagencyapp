@@ -27,8 +27,8 @@ const NavBar = () => {
   window.addEventListener('scroll', changeBackground)
   }, []);
 
-  const initial = 'transition lg:px-16 px-6 flex flex-wrap items-center lg:py-0 py-2 sticky w-full z-10 top-0 shadow-lg shadow-gray-400'
-  const active = 'transition duration-500 lg:px-16 px-6 flex flex-wrap items-center lg:py-0 py-2 sticky w-full z-10 top-0 bg-primary bg-opacity-80 shadow-lg shadow-gray-400'
+  const initial = 'transition lg:px-16 px-6 flex flex-wrap items-center lg:py-0 py-2 sticky w-full z-10 top-0 md:shadow-lg md:shadow-gray-400'
+  const active = 'transition duration-500 lg:px-16 px-6 flex flex-wrap items-center lg:py-0 py-2 sticky w-full z-10 top-0 bg-primary bg-opacity-80 md:shadow-lg md:shadow-gray-400'
 
   return (
     <div className={navBG ? active : initial}>
