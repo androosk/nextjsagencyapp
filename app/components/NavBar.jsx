@@ -31,10 +31,10 @@ const NavBar = () => {
   const active = 'transition duration-500 lg:px-16 px-6 flex flex-wrap items-center lg:py-0 py-2 sticky w-full z-10 top-0 bg-primary bg-opacity-80 md:shadow-lg md:shadow-gray-400'
 
   return (
-    <div className={navBG ? active : initial}>
-      <div className="flex-1 flex justify-between items-center">
+    <header className={navBG ? active : initial}>
+      <section className="flex-1 flex justify-between items-center">
         <Image className="scale-70 md:scale-100" src={NavLogo} alt="third andrew creative logo" width={300} height={20}/>
-      </div>
+      </section>
 
       <div className="hidden lg:flex lg:items-center lg:w-auto w-full" id="menu">
         <nav>
@@ -114,7 +114,7 @@ const NavBar = () => {
           </div>
         </div>
       </div>
-    </div>
+    </header>
   )
 }
 
