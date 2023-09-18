@@ -1,35 +1,27 @@
-import React from 'react'
+import React from "react";
 
 const InfoBar = () => {
+  const marqueeClass = `mx-4 text-lg md:text-4xl`;
+  
   return (
-    <section className='bg-white h-52 md:h-[450px] flex items-start place-content-center flex-col'>
-      <div className='relative flex overflow-x-hidden bg-black'>
-        <div className='py-2 animate-marquee whitespace-nowrap'>
-          <span className='mx-4 text-2xl'>text here1</span>
-          <span className='mx-4 text-2xl'>text here2</span>
-          <span className='mx-4 text-2xl'>text here3</span>
-          <span className='mx-4 text-2xl'>text here4</span>
-          <span className='mx-4 text-2xl'>text here5</span>
-          <span className='mx-4 text-2xl'>text here6</span>
-          <span className='mx-4 text-2xl'>text here7</span>
-          <span className='mx-4 text-2xl'>text here8</span>
-          <span className='mx-4 text-2xl'>text here9</span>
-        </div>
-        <div className=' absolute top-0 py-2 animate-marquee2 whitespace-nowrap'>
-          <span className='mx-4 text-2xl'>text here10</span>
-          <span className='mx-4 text-2xl'>text here11</span>
-          <span className='mx-4 text-2xl'>text here12</span>
-          <span className='mx-4 text-2xl'>text here13</span>
-          <span className='mx-4 text-2xl'>text here14</span>
-          <span className='mx-4 text-2xl'>text here15</span>
-          <span className='mx-4 text-2xl'>text here16</span>
-          <span className='mx-4 text-2xl'>text here17</span>
-          <span className='mx-4 text-2xl'>text here18</span>
-        </div>
-
+    <div class="relative flex overflow-x-hidden h-8 md:h-16 bg-black text-lg md:text-4xl">
+      <div class="animate-marquee py-1 md:py-4 whitespace-nowrap">
+        <span class="mx-4">Sometimes I wonder</span>
+        <span class="mx-4">Another thing</span>
+        <span class="mx-4">In case you were wondering</span>
+        <span class="mx-4">Were you wondering?</span>
+        <span class="mx-4">I wasn&apos;t wondering</span>
       </div>
-    </section>
-  )
-}
 
-export default InfoBar
+      <div class="absolute top-0 py-1 md:py-4 animate-marquee2 whitespace-nowrap">
+        <span class="mx-4">Sometimes I wonder</span>
+        <span class="mx-4">Another thing</span>
+        <span class="mx-4">In case you were wondering</span>
+        <span class="mx-4">Were you wondering?</span>
+        <span class="mx-4">I wasn&apos;t wondering</span>
+      </div>
+    </div>
+  );
+};
+
+export default InfoBar;
