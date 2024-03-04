@@ -62,8 +62,8 @@ export default function NavBar() {
       >
         <div className="border-black border-[1px] px-20 py-4 flex justify-between items-center w-full"> */}
       <header
-        className={`fixed top-0 left-0 w-full z-10 transition-all duration-300 ease-in-out ${
-          visible ? "opacity-100" : "opacity-0 pointer-events-none"
+        className={`fixed top-0 left-0 w-full z-10 transition-all duration-300 ease-in-out bg-white backdrop-blur ${
+          visible ? "opacity-90" : "opacity-0 pointer-events-none"
         } ${
           isClient && window.scrollY >= 80
             ? "bg-white/80 backdrop-blur"

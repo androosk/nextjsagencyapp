@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       backgroundImage: {
         "design-team": "url(/images/designprocess.jpg)",
+        "design-two": "url(/images/design2.jpg)",
       },
     },
   },
