@@ -35,7 +35,7 @@ export default function Home() {
 
       <div className="border-black border-b-[1px] py-10 flex flex-col justify-center items-center">
         <h3 className="text-2xl font-bold mb-4">
-          Let's boost your business&apos;s online impact together
+          Let&apos;s boost your business&apos;s online impact together
         </h3>
         <div className="text-lg mx-14">
           <ul>
@@ -54,7 +54,7 @@ export default function Home() {
               At Third Andrew Creative, we specialize in crafting custom
               websites and implementing cutting-edge SEO strategies that ensure
               your business doesn&apos;t just compete but excels online.
-              Let'&apos;s transform your online presence into your most powerful
+              Let&apos;s transform your online presence into your most powerful
               marketing tool and pave the way for your business&apos;s success.
             </li>
           </ul>
