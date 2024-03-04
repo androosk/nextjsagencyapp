@@ -54,25 +54,25 @@ export default function NavBar() {
 
   return (
     <div>
-      {/* <header
+      <header
         className={classNames(
-          "bg-white text-black md:py-6 px-4 md:px-12 md:flex gap-8 items-center md:justify-around outline-1 outline-gray-900",
-          navBar ? "bg-blue-400 text-white" : ""
+          `fixed top-0 left-0 w-full z-10 transition-all duration-300 ease-in-out ${
+            visible ? "" : "opacity-0 pointer-events-none"
+          } 
+        ${isClient && window.scrollY >= 80 ? "" : "bg-transparent"}
+         text-black md:py-6 py-6 px-4 md:px-12 md:flex gap-8 items-center md:justify-around outline-1 outline-gray-900`,
+          navBar ? "py-0 px-0" : ""
         )}
       >
-        <div className="border-black border-[1px] px-20 py-4 flex justify-between items-center w-full"> */}
-      <header
-        className={`fixed top-0 left-0 w-full z-10 transition-all duration-300 ease-in-out bg-white backdrop-blur ${
-          visible ? "opacity-90" : "opacity-0 pointer-events-none"
-        } ${
-          isClient && window.scrollY >= 80
-            ? "bg-white/80 backdrop-blur"
-            : "bg-transparent"
-        } text-black md:py-6 px-4 md:px-12 md:flex gap-8 items-center md:justify-around outline-1 outline-gray-900`}
-      >
-        <div className="border-black border-[1px] px-20 py-4 w-full">
-          <div className="fadeIn flex justify-between items-center">
-            <div className="flex items-center justify-around w-1/3">
+        <div
+          className={classNames(
+            "border-black border-[1px] px-8 sm:px-20 py-4 w-full",
+            visible ? "" : " transition-opacity pointer-events-none",
+            navBar ? "bg-blue-200 py-8 border-none" : "bg-white"
+          )}
+        >
+          <div className="fadeIn flex flex-col sm:flex-row justify-between items-center">
+            <nav className="sm:flex items-center justify-around w-1/3 hidden">
               <Link
                 href="/"
                 className={`${isActive(
@@ -89,8 +89,8 @@ export default function NavBar() {
               >
                 About
               </Link>
-            </div>
-            <div className="w-1/2 flex flex-col items-center justify-center">
+            </nav>
+            <div className="sm:w-1/2 flex flex-col sm:items-center sm:justify-center">
               <Link href="/">
                 <Image
                   src="/thirdandrew.svg"
@@ -99,9 +99,11 @@ export default function NavBar() {
                   alt="third andrew creative logo"
                 ></Image>
               </Link>
-              <h1 className="text-xl">Third Andrew Creative Agency</h1>
+              <h1 className="text-2xl sm:text-xl mb-4 sm:mb-0">
+                Third Andrew Creative Agency
+              </h1>
             </div>
-            <div className="w-1/3 flex items-center justify-around">
+            <nav className="w-1/3 hidden sm:flex items-center justify-around">
               <Link
                 href="/work"
                 className={`${isActive(
@@ -118,52 +120,44 @@ export default function NavBar() {
               >
                 Contact
               </Link>
+            </nav>
+            <div
+              onClick={handleNav}
+              className="sm:hidden cursor-pointer text-slate-600 mb-4"
+            >
+              {!navBar ? (
+                <AiOutlineMenu size={30} />
+              ) : (
+                <div>
+                  <AiOutlineClose size={30} />
+                </div>
+              )}
             </div>
+            {/* Hamburger Menu */}
+            <nav
+              className={classNames(
+                "transition-opacity duration-300",
+                `${
+                  navBar
+                    ? "flex flex-col items-center w-screen h-screen text-2xl bg-blue-200"
+                    : "opacity-0 hidden"
+                }`
+              )}
+            >
+              <Link href="/" className={`${isActive("/")} py-4`}>
+                Home
+              </Link>
+              <Link href="/account " className={`${isActive("/about")} py-4`}>
+                About
+              </Link>
+              <Link href="/logout" className={`${isActive("/work")} py-4`}>
+                Work
+              </Link>
+              <Link href="/logout" className={`${isActive("/contact")} py-4`}>
+                Contact
+              </Link>
+            </nav>
           </div>
-          <div
-            onClick={handleNav}
-            className="md:hidden cursor-pointer text-blue-400"
-          >
-            {!navBar ? (
-              <AiOutlineMenu size={25} />
-            ) : (
-              <div className="text-white">
-                <AiOutlineClose size={25} />
-              </div>
-            )}
-          </div>
-          {/* </div> */}
-          {/* Nav Links */}
-          {/* <nav
-            className={`${
-              navBar ? "flex" : "hidden"
-            } flex-col items-center justify-center md:flex md:flex-row md:gap-8 lg:gap-12`}
-          >
-            <Link
-              href="/dashboard"
-              className={`${isActive(
-                "/dashboard"
-              )} py-2 md:py-0 transition-colors hover:text-blue-400`}
-            >
-              Dashboard
-            </Link>
-            <Link
-              href="/account "
-              className={`${isActive(
-                "/account"
-              )} py-2 md:py-0 transition-colors hover:text-blue-400`}
-            >
-              Account
-            </Link>
-            <Link
-              href="/logout"
-              className={`${isActive(
-                "/logout"
-              )} py-2 md:py-0 transition-colors hover:text-blue-400`}
-            >
-              Logout
-            </Link>
-          </nav> */}
         </div>
       </header>
     </div>
