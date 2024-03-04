@@ -29,7 +29,7 @@ export default function Home() {
       </div>
       <div className="border-black border-b-[1px] py-10 flex flex-col justify-center items-center">
         <h3 className="text-3xl font-bold">
-          Specializing in boosting your small business's online impact
+          Specializing in boosting your small business&apos;s online impact
         </h3>
         <p></p>
       </div>
