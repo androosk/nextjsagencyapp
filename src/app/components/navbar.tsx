@@ -41,7 +41,7 @@ export default function NavBar() {
 
   useEffect(() => {
     setIsClient(true);
-  });
+  }, []);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll, { passive: true });

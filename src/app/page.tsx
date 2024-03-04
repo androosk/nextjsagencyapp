@@ -16,9 +16,9 @@ export default function Home() {
           <div className="pl-10 w-2/3">
             <h2 className="text-4xl">Who is Third Andrew Creative?</h2>
             <p className=" pt-10 leading-8 text-lg">
-              Your vision, crafted with care. We're a design agency that listens
-              intently, collaborates closely, and focuses on bringing your ideas
-              to life with precision and creativity.
+              Your vision, crafted with care. We&apos;re a design agency that
+              listens intently, collaborates closely, and focuses on bringing
+              your ideas to life with precision and creativity.
             </p>
           </div>
         </div>
