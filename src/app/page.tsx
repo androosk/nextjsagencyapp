@@ -39,23 +39,23 @@ export default function Home() {
         </h3>
         <div className="text-lg mx-14">
           <ul>
-            <li className="mb-2 tracking-wide leading-8">
+            <li className="mb-2 tracking-wide leading-8 list-disc">
               Standing out online is more challenging than ever. Your website is
-              the heart of your business's online presence.
+              the heart of your business&apos;s online presence.
             </li>
-            <li className="leading-8 tracking-wide">
+            <li className="leading-8 tracking-wide list-disc">
               Are you truly reaching your target audience?
             </li>
-            <li className="mb-2">
+            <li className="mb-2 list-disc">
               Is your website optimized for search engines to enhance
               visibility?
             </li>
             <li>
               At Third Andrew Creative, we specialize in crafting custom
               websites and implementing cutting-edge SEO strategies that ensure
-              your business doesn't just compete but excels online. Let's
-              transform your online presence into your most powerful marketing
-              tool and pave the way for your business's success.
+              your business doesn&apos;t just compete but excels online.
+              Let'&apos;s transform your online presence into your most powerful
+              marketing tool and pave the way for your business&apos;s success.
             </li>
           </ul>
         </div>
