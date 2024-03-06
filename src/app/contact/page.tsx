@@ -10,7 +10,7 @@ export const metadata = {
 export default function Page() {
   return (
     <div>
-      <div className="px-4">
+      <div className="px-4 fadeIn">
         <section className="text-black mt-36  w-full py-10 md:py-16  flex flex-col justify-center">
           <h1 className="text-center mb-8 text-4xl xl:text-5xl tracking-wide">
             Contact us

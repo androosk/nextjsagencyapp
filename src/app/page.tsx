@@ -1,6 +1,25 @@
+"use client";
+import { useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
+  useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("fadeIn");
+        }
+      });
+    });
+
+    const elements = document.querySelectorAll(".element-to-fadeIn");
+    elements.forEach(el => observer.observe(el));
+
+    // Cleanup function to unobserve when component unmounts
+    return () => elements.forEach(el => observer.unobserve(el));
+  }, []);
+
   return (
     <main className="mt-48">
       <div className="w-[100vw] h-full items-center lg:flex border-black border-b-[1px]">
@@ -15,7 +34,7 @@ export default function Home() {
               className="p-4 border-black border-[1px] fadeIn"
             ></Image>
           </div>
-          <div className="sm:pl-10 sm:w-2/3">
+          <div className="sm:pl-10 sm:w-2/3 fadeIn">
             <h2 className="text-2xl lg:text-4xl">Why Third Andrew Creative?</h2>
             <p className="sm:pt-10 pt-4 leading-8 lg:text-lg mb-4">
               Your vision, crafted with care
@@ -29,35 +48,55 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex w-full justify-center items-center px-10 py-10 border-black border-b-[1px] bg-blue-200">
-        <div className=" text-center">Content Here</div>
+      <div className="py-4 border-black border-b-[1px] bg-blue-200">
+        <Link
+          href="/services"
+          className="cursor-pointer flex w-full justify-center items-center element-to-fadeIn"
+        >
+          <p className="text-lg italic uppercase text-center tracking-widest">
+            how can we help you?
+          </p>
+          <Image
+            src="/images/rightarrow.png"
+            alt="arrow"
+            height={50}
+            width={100}
+            className="pl-4"
+          ></Image>
+        </Link>
       </div>
 
-      <div className="border-black border-b-[1px] py-10 flex flex-col justify-center items-center">
-        <h3 className="text-2xl font-bold mb-4">
-          Let&apos;s boost your business&apos;s online impact together
-        </h3>
-        <div className="text-lg mx-14">
-          <ul>
-            <li className="mb-2 tracking-wide leading-8 list-disc">
-              Standing out online is more challenging than ever. Your website is
-              the heart of your business&apos;s online presence.
-            </li>
-            <li className="leading-8 tracking-wide list-disc">
-              Are you truly reaching your target audience?
-            </li>
-            <li className="mb-2 list-disc">
-              Is your website optimized for search engines to enhance
-              visibility?
-            </li>
-            <li>
-              At Third Andrew Creative, we specialize in crafting custom
-              websites and implementing cutting-edge SEO strategies that ensure
-              your business doesn&apos;t just compete but excels online.
-              Let&apos;s transform your online presence into your most powerful
-              marketing tool and pave the way for your business&apos;s success.
-            </li>
-          </ul>
+      <div className="border-black border-b-[1px] grid grid-cols-1 sm:grid-cols-3 justify-center items-center element-to-fadeIn">
+        <div className="bg-idea-img bg-faded relative bg-cover bg-center min-h-[300px] sm:min-h-[600px]">
+          <div className="relative z-20 flex flex-col justify-center items-center text-white min-h-[300px] sm:min-h-[600px]">
+            <h4 className="text-4xl sm:text-6xl mb-6 element-to-fadeIn">
+              Design
+            </h4>
+            <div className="flex flex-col justify-center items-center text-center text-xl px-10 element-to-fadeIn">
+              <p>Custom websites that capture your brand essence</p>
+            </div>
+          </div>
+        </div>
+        <div className="bg-frame-img relative bg-faded bg-cover bg-center min-h-[300px] sm:min-h-[600px]">
+          <div className="relative z-20 flex flex-col justify-center items-center text-white min-h-[300px] sm:min-h-[600px]">
+            <h4 className="text-4xl sm:text-6xl mb-6 element-to-fadeIn">
+              Develop
+            </h4>
+            <div className="flex flex-col justify-center items-center text-xl px-10 text-center element-to-fadeIn">
+              <p>We help you connect with those who matter most</p>
+            </div>
+          </div>
+        </div>
+        <div className="bg-notebook-img relative bg-faded bg-cover bg-center min-h-[300px] sm:min-h-[600px]">
+          <div className="relative z-20 flex flex-col justify-center items-center text-white min-h-[300px] sm:min-h-[600px]">
+            <h4 className="text-4xl sm:text-6xl mb-6 element-to-fadeIn">
+              Optimize
+            </h4>
+            <div className="flex flex-col justify-center items-center text-xl element-to-fadeIn">
+              <p>Is your site a needle in a haystack?</p>
+              <p>Let&apos;s make it a beacon</p>
+            </div>
+          </div>
         </div>
       </div>
     </main>

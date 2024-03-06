@@ -40,8 +40,20 @@ body {
   animation: fadeIn 1s ease-in-out forwards;
 }
 
+/* .bg-faded::after {
+  content: '';
+  @apply absolute inset-0 bg-gray-400 opacity-50;
+  z-index: 10;
+} */
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.bg-faded::before {
+  content: '';
+  @apply absolute inset-0 bg-slate-600 opacity-50;
+  z-index: 10;
 }

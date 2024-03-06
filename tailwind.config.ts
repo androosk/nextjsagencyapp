@@ -11,6 +11,9 @@ const config: Config = {
       backgroundImage: {
         "design-team": "url(/images/designprocess.jpg)",
         "design-two": "url(/images/design2.jpg)",
+        "idea-img": "url(/images/lightbulb.jpg)",
+        "frame-img": "url(/images/frame.jpg)",
+        "notebook-img": "url(/images/notebook.jpg)",
       },
     },
   },
