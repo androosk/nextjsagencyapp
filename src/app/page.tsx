@@ -122,6 +122,7 @@ export default function Home() {
             )}
           </div>
         </div>
+        {designOpen && <Design />}
 
         {/* Develop Section */}
         <div
@@ -218,8 +219,9 @@ export default function Home() {
         </div>
         {optimizeOpen && <Optimize />}
       </div>
-      <Design />
-      <div></div>
+      <div className="hidden sm:flex">
+        <Design />
+      </div>
     </main>
   );
 }

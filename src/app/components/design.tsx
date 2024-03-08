@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Design() {
   return (
-    <div className="flex w-screen py-16 px-10 justify-center items-center border-b-[1px] border-black bg-gradient-to-r from-slate-500 to-white fadeIn">
+    <div className="flex w-screen py-16 px-10 justify-center items-center border-b-[1px] border-black bg-slate-500 bg-gradient-to-r from-slate-500 to-slate-300 sm:to-white fadeIn">
       <div className="flex flex-col px-10">
         <h1 className="text-white italic text-2xl sm:text-4xl fadeIn flex">
           Wherever you are in your digital journey, we&apos;ll work with you to
