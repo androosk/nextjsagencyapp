@@ -57,3 +57,54 @@ body {
   @apply absolute inset-0 bg-slate-600 opacity-50;
   z-index: 10;
 }
+
+/* @keyframes scroll-up { */
+  /* 0% {
+    transform: translateY(0);
+  } */
+
+  /* 100% {
+    transform: translateY(-50%);
+    /* Adjust this value as needed */
+  /* } */
+/* } */
+
+/* .scroll-animation-1 {
+  animation: scroll-up 70s linear infinite;
+}
+
+.scroll-animation-2 {
+  animation: scroll-up 50s linear infinite;
+}
+
+.scroll-animation-3 {
+  animation: scroll-up 70s linear infinite;
+} */
+
+@keyframes scroll-up {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.scroll-animation-1,
+.scroll-animation-2,
+.scroll-animation-3 {
+  position: relative;
+  height: 100%;
+}
+
+.scroll-content {
+  display: flex;
+  flex-direction: column;
+  height: 200%;
+  animation: scroll-up 40s linear infinite;
+}
+
+.scroll-animation-2 .scroll-content {
+  animation-duration: 50s;
+}
