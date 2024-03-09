@@ -1,15 +1,18 @@
 import Image from "next/image";
+// import { useFadeIn } from "@/functions/useFadeIn";
 
 export default function Design() {
+  // useFadeIn();
+
   return (
-    <div className="flex w-screen py-16 px-10 justify-center items-center border-b-[1px] border-black bg-slate-500 bg-gradient-to-r from-slate-500 to-slate-300 sm:to-white fadeIn">
-      <div className="flex flex-col px-10">
-        <h1 className="text-white italic text-2xl sm:text-4xl fadeIn flex">
+    <div className="flex w-screen px-10 justify-center items-center border-b-[1px] border-black bg-slate-500 bg-gradient-to-r from-slate-500 to-slate-300 sm:to-white fadeIn">
+      <div className="flex flex-col px-10 element-to-fadeIn">
+        <h1 className="text-white italic text-2xl sm:text-4xl fadeIn flex element-to-fadeIn">
           Wherever you are in your digital journey, we&apos;ll work with you to
           bring your vision to reality
         </h1>
       </div>
-      <div className="hidden sm:flex container mx-auto bg-slate-500 px-10 sm:max-h-48 md:max-h-80 sm:min-w-2xl overflow-hidden rounded-3xl">
+      <div className="hidden sm:flex container mx-auto bg-slate-500 px-10 sm:max-h-96 sm:min-w-2xl overflow-hidden element-to-fadeIn">
         <div className="grid grid-cols-3 gap-4">
           <div className="overflow-y-hidden scroll-animation-1">
             <div className="scroll-content">

@@ -58,28 +58,6 @@ body {
   z-index: 10;
 }
 
-/* @keyframes scroll-up { */
-  /* 0% {
-    transform: translateY(0);
-  } */
-
-  /* 100% {
-    transform: translateY(-50%);
-    /* Adjust this value as needed */
-  /* } */
-/* } */
-
-/* .scroll-animation-1 {
-  animation: scroll-up 70s linear infinite;
-}
-
-.scroll-animation-2 {
-  animation: scroll-up 50s linear infinite;
-}
-
-.scroll-animation-3 {
-  animation: scroll-up 70s linear infinite;
-} */
 
 @keyframes scroll-up {
   0% {
@@ -87,6 +65,16 @@ body {
   }
 
   100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes scroll-down {
+  100% {
+    transform: translateY(0);
+  }
+
+  0% {
     transform: translateY(-50%);
   }
 }
@@ -106,5 +94,6 @@ body {
 }
 
 .scroll-animation-2 .scroll-content {
+  animation: scroll-down linear infinite;
   animation-duration: 50s;
 }

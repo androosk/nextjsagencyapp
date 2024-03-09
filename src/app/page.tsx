@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Design from "./components/design";
@@ -8,27 +8,13 @@ import Optimize from "./components/optimize";
 import { classNames } from "@/functions/classnames";
 import { IoIosArrowDropdown } from "react-icons/io";
 import { IoIosArrowDropup } from "react-icons/io";
+import { useFadeIn } from "@/functions/useFadeIn";
 
 export default function Home() {
-  const [designOpen, setDesignOpen] = useState(false);
+  useFadeIn();
+  const [designOpen, setDesignOpen] = useState(true);
   const [developOpen, setDevelopOpen] = useState(false);
   const [optimizeOpen, setOptimizeOpen] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("fadeIn");
-        }
-      });
-    });
-
-    const elements = document.querySelectorAll(".element-to-fadeIn");
-    elements.forEach(el => observer.observe(el));
-
-    // Cleanup function to unobserve when component unmounts
-    return () => elements.forEach(el => observer.unobserve(el));
-  }, []);
 
   return (
     <main className="mt-48">
@@ -103,26 +89,31 @@ export default function Home() {
             >
               <p>Custom websites that capture your brand essence</p>
             </div>
-            {!designOpen ? (
-              <IoIosArrowDropdown
-                size={30}
-                className="sm:hidden"
-                onClick={() => {
-                  setDesignOpen(!designOpen);
-                  setDevelopOpen(false);
-                  setOptimizeOpen(false);
-                }}
-              />
-            ) : (
-              <IoIosArrowDropup
-                size={30}
-                className="sm:hidden absolute bottom-6"
-                onClick={() => setDesignOpen(!designOpen)}
-              />
-            )}
+            <div className="sm:py-10 py-0">
+              {!designOpen ? (
+                <IoIosArrowDropdown
+                  size={30}
+                  onClick={() => {
+                    setDesignOpen(!designOpen);
+                    setDevelopOpen(false);
+                    setOptimizeOpen(false);
+                  }}
+                />
+              ) : (
+                <IoIosArrowDropup
+                  size={30}
+                  className="absolute bottom-6 sm:static sm:bottom-full"
+                  onClick={() => setDesignOpen(!designOpen)}
+                />
+              )}
+            </div>
           </div>
         </div>
-        {designOpen && <Design />}
+        {designOpen && (
+          <div className="sm:hidden">
+            <Design />
+          </div>
+        )}
 
         {/* Develop Section */}
         <div
@@ -150,26 +141,31 @@ export default function Home() {
             >
               <p>We help you connect with those who matter most</p>
             </div>
-            {!developOpen ? (
-              <IoIosArrowDropdown
-                size={30}
-                className="sm:hidden"
-                onClick={() => {
-                  setDesignOpen(false);
-                  setDevelopOpen(!developOpen);
-                  setOptimizeOpen(false);
-                }}
-              />
-            ) : (
-              <IoIosArrowDropup
-                size={30}
-                className="sm:hidden absolute bottom-6"
-                onClick={() => setDevelopOpen(!developOpen)}
-              />
-            )}
+            <div className="sm:py-10 py-0">
+              {!developOpen ? (
+                <IoIosArrowDropdown
+                  size={30}
+                  onClick={() => {
+                    setDesignOpen(false);
+                    setDevelopOpen(!developOpen);
+                    setOptimizeOpen(false);
+                  }}
+                />
+              ) : (
+                <IoIosArrowDropup
+                  size={30}
+                  className="absolute bottom-6 sm:static sm:bottom-full"
+                  onClick={() => setDevelopOpen(!developOpen)}
+                />
+              )}
+            </div>
           </div>
         </div>
-        {developOpen && <Develop />}
+        {developOpen && (
+          <div className="sm:hidden">
+            <Develop />
+          </div>
+        )}
 
         {/* Optimize Section */}
         <div
@@ -198,30 +194,50 @@ export default function Home() {
               <p>Is your site a needle in a haystack?</p>
               <p>Let&apos;s make it a beacon</p>
             </div>
-            {!optimizeOpen ? (
-              <IoIosArrowDropdown
-                size={30}
-                className="sm:hidden"
-                onClick={() => {
-                  setDesignOpen(false);
-                  setDevelopOpen(false);
-                  setOptimizeOpen(!optimizeOpen);
-                }}
-              />
-            ) : (
-              <IoIosArrowDropup
-                size={30}
-                className="sm:hidden absolute bottom-6"
-                onClick={() => setOptimizeOpen(!optimizeOpen)}
-              />
-            )}
+            <div className="sm:py-10 py-0">
+              {!optimizeOpen ? (
+                <IoIosArrowDropdown
+                  size={30}
+                  onClick={() => {
+                    setDesignOpen(false);
+                    setDevelopOpen(false);
+                    setOptimizeOpen(!optimizeOpen);
+                  }}
+                />
+              ) : (
+                <IoIosArrowDropup
+                  size={30}
+                  className="absolute bottom-6 sm:static sm:bottom-full"
+                  onClick={() => {
+                    setOptimizeOpen(!optimizeOpen);
+                    setDesignOpen(true);
+                  }}
+                />
+              )}
+            </div>
           </div>
         </div>
-        {optimizeOpen && <Optimize />}
+        {optimizeOpen && (
+          <div className="sm:hidden">
+            <Optimize />
+          </div>
+        )}
       </div>
-      <div className="hidden sm:flex">
-        <Design />
-      </div>
+      {designOpen && (
+        <div className="hidden sm:flex">
+          <Design />
+        </div>
+      )}
+      {developOpen && (
+        <div className="hidden sm:flex">
+          <Develop />
+        </div>
+      )}
+      {optimizeOpen && (
+        <div className="hidden sm:flex">
+          <Optimize />
+        </div>
+      )}
     </main>
   );
 }
