@@ -5,6 +5,7 @@ import Link from "next/link";
 import Design from "./components/design";
 import Develop from "./components/develop";
 import Optimize from "./components/optimize";
+import { useIsMobile } from "@/functions/useIsMobile";
 import { classNames } from "@/functions/classnames";
 import { IoIosArrowDropdown } from "react-icons/io";
 import { IoIosArrowDropup } from "react-icons/io";
@@ -12,7 +13,8 @@ import { useFadeIn } from "@/functions/useFadeIn";
 
 export default function Home() {
   useFadeIn();
-  const [designOpen, setDesignOpen] = useState(true);
+  const isMobile = useIsMobile();
+  const [designOpen, setDesignOpen] = useState(!isMobile);
   const [developOpen, setDevelopOpen] = useState(false);
   const [optimizeOpen, setOptimizeOpen] = useState(false);
 
@@ -103,7 +105,12 @@ export default function Home() {
                 <IoIosArrowDropup
                   size={30}
                   className="absolute bottom-6 sm:static sm:bottom-full"
-                  onClick={() => setDesignOpen(!designOpen)}
+                  onClick={() => {
+                    setDesignOpen(!designOpen);
+                    {
+                      !isMobile && setDevelopOpen(true);
+                    }
+                  }}
                 />
               )}
             </div>
@@ -155,7 +162,12 @@ export default function Home() {
                 <IoIosArrowDropup
                   size={30}
                   className="absolute bottom-6 sm:static sm:bottom-full"
-                  onClick={() => setDevelopOpen(!developOpen)}
+                  onClick={() => {
+                    setDevelopOpen(!developOpen);
+                    {
+                      !isMobile && setOptimizeOpen(true);
+                    }
+                  }}
                 />
               )}
             </div>
@@ -201,7 +213,7 @@ export default function Home() {
                   onClick={() => {
                     setDesignOpen(false);
                     setDevelopOpen(false);
-                    setOptimizeOpen(!optimizeOpen);
+                    setOptimizeOpen(true);
                   }}
                 />
               ) : (
@@ -210,7 +222,9 @@ export default function Home() {
                   className="absolute bottom-6 sm:static sm:bottom-full"
                   onClick={() => {
                     setOptimizeOpen(!optimizeOpen);
-                    setDesignOpen(true);
+                    {
+                      !isMobile && setDesignOpen(true);
+                    }
                   }}
                 />
               )}

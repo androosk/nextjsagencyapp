@@ -1,5 +1,5 @@
 "use client";
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { classNames } from "@/functions/classnames";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
@@ -28,7 +28,7 @@ export default function NavBar() {
       if (currentScrollY > lastScrollY) {
         if (currentScrollY < 80) {
           return true;
-        } else if (currentScrollY > window.innerHeight * 1.5) {
+        } else if (currentScrollY > window.innerHeight * 1.25) {
           return false;
         }
         return prev;

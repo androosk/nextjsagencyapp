@@ -14,6 +14,7 @@ const config: Config = {
         "idea-img": "url(/images/lightbulb.jpg)",
         "frame-img": "url(/images/frame.jpg)",
         "notebook-img": "url(/images/notebook.jpg)",
+        "develop-img": "url(/images/branddevelopment.jpg)",
       },
     },
   },
