@@ -193,7 +193,7 @@ export default function Services() {
                       {service.description}
                     </p>
 
-                    <h4 className="text-2xl mb-4">What's Included:</h4>
+                    <h4 className="text-2xl mb-4">What&apos;s Included:</h4>
                     <ul className="space-y-3 mb-8">
                       {service.features.map((feature, index) => (
                         <li key={index} className="flex items-start">
@@ -229,8 +229,8 @@ export default function Services() {
                         Ready to Get Started?
                       </h5>
                       <p className="mb-6">
-                        Let's discuss your project and see how we can help bring
-                        your vision to life.
+                        Let&apos;s discuss your project and see how we can help
+                        bring your vision to life.
                       </p>
                       <button className="bg-white text-black px-6 py-3 font-semibold hover:bg-gray-100 transition-colors">
                         Contact Us Today
@@ -294,7 +294,7 @@ export default function Services() {
               </h4>
               <p className="leading-7">
                 Most website projects take 4-8 weeks from start to finish,
-                depending on complexity. We'll provide a detailed timeline
+                depending on complexity. We&apos;ll provide a detailed timeline
                 during our initial consultation.
               </p>
             </div>
@@ -303,8 +303,8 @@ export default function Services() {
                 Do you work with businesses outside of Utah?
               </h4>
               <p className="leading-7">
-                Absolutely! While we're based in the Salt Lake Valley, we work
-                with clients across the United States and internationally.
+                Absolutely! While we&apos;re based in the Salt Lake Valley, we
+                work with clients across the United States and internationally.
               </p>
             </div>
             <div className="element-to-fadeIn">
@@ -313,8 +313,8 @@ export default function Services() {
               </h4>
               <p className="leading-7">
                 We focus on building long-term partnerships with our clients.
-                Every project gets personal attention, and we're committed to
-                your success beyond just delivering a website.
+                Every project gets personal attention, and we&apos;re committed
+                to your success beyond just delivering a website.
               </p>
             </div>
             <div className="element-to-fadeIn">

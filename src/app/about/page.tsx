@@ -54,11 +54,11 @@ export default function About() {
               Meet Third Andrew Creative
             </h2>
             <p className="leading-8 lg:text-lg mb-6">
-              We're a creative agency that believes every business has a story
-              worth telling beautifully online.
+              We&apos;re a creative agency that believes every business has a
+              story worth telling beautifully online.
             </p>
             <p className="leading-8 lg:text-lg">
-              Based in the Salt Lake Valley, we've been helping businesses
+              Based in the Salt Lake Valley, we&apos;ve been helping businesses
               connect with their audiences through thoughtful design and
               strategic development since our founding.
             </p>

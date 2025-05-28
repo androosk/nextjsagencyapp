@@ -212,8 +212,8 @@ export default function Work() {
               measurable success.
             </p>
             <p className="leading-8 lg:text-lg">
-              From local businesses to growing startups, we've helped companies
-              across various industries achieve their digital goals.
+              From local businesses to growing startups, we&apos;ve helped
+              companies across various industries achieve their digital goals.
             </p>
           </div>
         </div>
@@ -362,7 +362,7 @@ export default function Work() {
                   {selectedProject.testimonial && (
                     <div className="bg-gray-50 p-6 border-l-4 border-blue-500">
                       <p className="italic mb-3">
-                        "{selectedProject.testimonial.text}"
+                        &quot;{selectedProject.testimonial.text}&quot;
                       </p>
                       <p className="font-semibold">
                         — {selectedProject.testimonial.author}
@@ -410,8 +410,8 @@ export default function Work() {
             Ready to Start Your Project?
           </h3>
           <p className="text-lg leading-8 mb-8 element-to-fadeIn">
-            Let's discuss how we can help bring your vision to life and achieve
-            similar results for your business.
+            Let&apos;s discuss how we can help bring your vision to life and
+            achieve similar results for your business.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center element-to-fadeIn">
             <button className="bg-blue-200 text-black px-8 py-4 text-lg font-semibold border-black border-[1px] hover:bg-blue-300 transition-colors">
