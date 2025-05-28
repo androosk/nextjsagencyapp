@@ -85,7 +85,7 @@ export default function NavBar() {
                 href="/about"
                 className={`${isActive(
                   "/about"
-                )} py-2 font-semibold tracking-wider text-lg pointer-events-none text-gray-400`}
+                )} py-2 font-semibold tracking-wider text-lg`}
               >
                 About
               </Link>
@@ -93,7 +93,7 @@ export default function NavBar() {
                 href="/services"
                 className={`${isActive(
                   "/services"
-                )} py-2 font-semibold tracking-wider text-lg pointer-events-none text-gray-400`}
+                )} py-2 font-semibold tracking-wider text-lg`}
               >
                 Services
               </Link>
@@ -121,7 +121,7 @@ export default function NavBar() {
                 href="/work"
                 className={`${isActive(
                   "/work"
-                )} py-2 font-semibold tracking-wider text-lg pointer-events-none text-gray-400`}
+                )} py-2 font-semibold tracking-wider text-lg`}
               >
                 Work
               </Link>
@@ -169,7 +169,7 @@ export default function NavBar() {
                 <Link href="/" className={`${isActive("/")} py-4 text-black`}>
                   Home
                 </Link>
-                <Link href="/account " className={`${isActive("/about")} py-4`}>
+                <Link href="/about " className={`${isActive("/about")} py-4`}>
                   About
                 </Link>
                 <Link
